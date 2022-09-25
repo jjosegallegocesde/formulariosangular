@@ -1,0 +1,14 @@
+<P>{{nombreSolo}}</P>
+
+<ul>
+    <li *ngFor="let personita of nombres">
+        <img src="{{personita.nombre}}" alt="">
+    </li>
+    
+</ul>
+
+<button (click)="quitarNombre()">
+    click
+</button>
+
+

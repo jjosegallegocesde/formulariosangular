@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8">
+
+            <form [formGroup]="formulario" (ngSubmit)="analizarFormulario()">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                    <div  *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.errors?.['required']" class="alert alert-danger mt-2">Campo obligatorio</div>
+                    <div  *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.errors?.['minlength']" class="alert alert-danger mt-2">Campo revisar</div>  
+                </div>
+            
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+            
+            
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
